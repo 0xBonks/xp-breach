@@ -86,6 +86,9 @@ int main() {
             }
             case STATE_SETTINGS: {
                 DrawSettings((float)screen_width, (float)screen_height, font, backgroundMusic);
+                /*if (isSaved()) {
+                    current_pc_state = STATE_BOOT_SELECT;
+                }*/
                 break;
             }
             default: break;

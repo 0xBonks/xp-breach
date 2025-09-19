@@ -52,12 +52,12 @@ Config LoadSettings(const std::string& filename) {
 	return config;
 }
 
-Config SetSettings(const Config& config, const std::string& filename) {
+void SetSettings(Config& config, const std::string& filename) {
 	std::ofstream file(RESOURCES_PATH "configs/" + filename);
 
 	if (!file.is_open()) {
 		std::cerr << "Could not open Config!" << std::endl;
-		return config;
+		return;
 	}
 
 	for (const auto& section : config) {

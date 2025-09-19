@@ -7,6 +7,6 @@
 using Config = std::map<std::string, std::map<std::string, std::string>>;
 
 Config LoadSettings(const std::string& filename);
-Config SetSettings(const Config& config, const std::string& filename);
+void SetSettings(Config& config, const std::string& filename);
 
 #endif CONFIG_H

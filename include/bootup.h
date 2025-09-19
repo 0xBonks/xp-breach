@@ -9,6 +9,7 @@ void DrawBootUpScreen(float screenWidth, float screenHeight, Font font);
 void UnloadBootUpTextures();
 void DrawSettings(float screenWidth, float screenHeight, Font font, Music backgroundMusic);
 void UpdateSettings();
-void safeSettings();
+void safeSettings(int volume);
+bool isSaved();
 
 #endif

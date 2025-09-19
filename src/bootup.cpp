@@ -163,17 +163,22 @@ void UpdateSettings() {
             SetMasterVolume(currentVolumeIndex / 8.0f);
         }
         else if (isMouseOverSafeSettings) {
-            safeSettings();
+            safeSettings(currentVolumeIndex);
         }
     }
     lastMouseState = currentMouseState;
 }
 
-void safeSettings() {
+void safeSettings(int volume) {
     Config config = LoadSettings("settings.ini");
+    config["Settings"]["volume"] = std::to_string(volume);
     SetSettings(config, "settings.ini");
-    settingsSaved = true;
     buttonCooldown = 2.0f;
+    settingsSaved = true;
+}
+
+bool isSaved() {
+    return settingsSaved;
 }
 
 void UnloadBootUpTextures() {
